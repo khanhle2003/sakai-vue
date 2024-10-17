@@ -1,56 +1,37 @@
 <template>
-    <div class="flex justify-between text-2xl font-semibold px-[56px] py-4 bg-gray-200">
-        <div>LOGO</div>
-        <div>
-            <div class="relative inline-block">
-                <Button class="mx-2" @click="toggleMenuUser()" icon="pi pi-user" severity="info" rounded outlined aria-label="User" />
+    <div class="flex justify-between items-center px-8 py-4 bg-white shadow-md">
+        <!-- Logo and Name -->
+        <div class="flex items-center">
+            <img src="" alt="Logo" class="h-10 mr-2" />
+            <span class="text-xl font-bold">BookStore</span>
+        </div>
 
-                <div v-if="menuUser" class="absolute bg-red-300 top-[48px] left-[-70px] rounded-md">
-                    <div class="w-[200px]">
-                        <ul>
-                            <li v-for="item in itemsMenu" :key="item.id">
-                                <div class="flex justify-start hover:bg-yellow-100 cursor-pointer pl-3">
-                                    <span class="text-lg">{{ item.name }}</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+        <!-- Navigation Menu -->
+        <ul class="flex space-x-20 text-lg">
+            <li class="cursor-pointer hover:text-green-600">Trang chủ &#9662;</li>
+            <li class="cursor-pointer hover:text-green-600">Tin sách &#9662;</li>
+            <li class="cursor-pointer hover:text-green-600">Sách hot &#9662;</li>
+            <li class="cursor-pointer hover:text-green-600">Tác giả &#9662;</li>
+            <li class="cursor-pointer hover:text-green-600">Cuộc thi &#9662;</li>
+            <li class="cursor-pointer hover:text-green-600">Về BookStore &#9662;</li>
+            <li class="cursor-pointer hover:text-green-600">Liên hệ &#9662;</li>
+        </ul>
+
+        <!-- Search and Icons -->
+        <div class="flex items-center space-x-4">
+            <div class="relative">
+                <input type="text" placeholder="Tìm kiếm..." class="border border-green-500 rounded-full px-4 py-1 w-64" />
+                <button class="absolute right-2 top-1/2 transform -translate-y-1/2 ">
+                    <i class="pi pi-search text-green-500"></i>
+                </button>
             </div>
-
-            <Button class="mx-2" icon="pi pi-bell" severity="warning" rounded outlined aria-label="Notification" />
-            <Button class="mx-2" icon="pi pi-cog" @click="toggleSidebar" severity="danger" rounded outlined aria-label="Cancel" />
+            <i class="pi pi-user text-xl cursor-pointer rounded-full text-green-500"></i>
+            <i class="pi pi-shopping-cart text-xl cursor-pointer rounded-full text-green-500"></i>
         </div>
     </div>
 </template>
 
 <script setup>
-import { useSidebar } from './composables/layout';
-import { ref } from 'vue';
-
-const { toggleSidebar } = useSidebar();
-const menuUser = ref(false);
-
-const toggleMenuUser = () => {
-    menuUser.value = !menuUser.value;
-};
-
-const itemsMenu = [
-    {
-        icon: 'pi pi-bell',
-        name: 'Đăng nhập'
-    },
-    {
-        icon: 'pi pi-bell',
-        name: 'Đăng nhập'
-    },
-    {
-        icon: 'pi pi-bell',
-        name: 'Đăng nhập'
-    },
-    {
-        icon: 'pi pi-bell',
-        name: 'Đăng nhập'
-    }
-];
+// No changes needed in the script for this layout
 </script>
+

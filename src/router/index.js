@@ -66,7 +66,8 @@ const router = createRouter({
             name: 'landing',
             component: () => import('@/views/pages/Landing.vue')
         },
-        {
+        {   
+            path: '/admin', 
             component: () => import('@/views/layout/AppLayout.vue'),
             children: [
                 {

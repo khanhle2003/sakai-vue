@@ -6,7 +6,6 @@ const router = createRouter({
     routes: [
         {
             path: '/',
-<<<<<<< HEAD
             component: () => import('@/views/client/components/LayoutClient.vue'),
             children: [
                 {
@@ -59,7 +58,15 @@ const router = createRouter({
                     path: 'customer-manager',
                     name: 'CustomerManager',
                     component: () => import('@/views/admin/CustomerManager.vue')
-=======
+                }
+            ]
+        },
+        {
+            path: '/landing',
+            name: 'landing',
+            component: () => import('@/views/pages/Landing.vue')
+        },
+        {
             component: () => import('@/views/layout/AppLayout.vue'),
             children: [
                 {
@@ -71,7 +78,6 @@ const router = createRouter({
                     path: '/transaction',
                     name: 'transaction',
                     component: () => import('@/views/admin/Transaction.vue')
->>>>>>> e46ed424830b33508441902eb65ae475e4d67d43
                 }
             ]
         },

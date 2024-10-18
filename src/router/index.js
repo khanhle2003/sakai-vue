@@ -6,6 +6,7 @@ const router = createRouter({
     routes: [
         {
             path: '/',
+<<<<<<< HEAD
             component: () => import('@/views/client/components/LayoutClient.vue'),
             children: [
                 {
@@ -58,6 +59,19 @@ const router = createRouter({
                     path: 'customer-manager',
                     name: 'CustomerManager',
                     component: () => import('@/views/admin/CustomerManager.vue')
+=======
+            component: () => import('@/views/layout/AppLayout.vue'),
+            children: [
+                {
+                    path: '/',
+                    name: 'dashboard',
+                    component: () => import('@/views/admin/Dashboard.vue')
+                },
+                {
+                    path: '/transaction',
+                    name: 'transaction',
+                    component: () => import('@/views/admin/Transaction.vue')
+>>>>>>> e46ed424830b33508441902eb65ae475e4d67d43
                 }
             ]
         },
@@ -86,6 +100,21 @@ const router = createRouter({
             path: '/auth/error',
             name: 'error',
             component: () => import('@/views/pages/auth/Error.vue')
+        },
+        {
+            path: '/auth/register',
+            name: 'register',
+            component: () => import('@/views/pages/auth/Register.vue')
+        },
+        {
+            path: '/auth/forget-password',
+            name: 'forgetPassword',
+            component: () => import('@/views/pages/auth/ForgetPassword.vue')
+        },
+        {
+            path: '/auth/passwordReset',
+            name: 'resetPassword',
+            component: () => import('@/views/pages/auth/ResetPassword.vue')
         }
     ]
 });
